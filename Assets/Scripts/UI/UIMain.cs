@@ -28,6 +28,10 @@ public class UIMain : MonoBehaviour
         btnOther.onClick.AddListener(onClickOther);
 
         var listener = GetComponent<DragListener>();
+        if (listener == null)
+        {
+            listener = this.gameObject.AddComponent<DragListener>();
+        }
         listener.onDragBegin = OnBeginDrag;
         listener.onDrag = OnDrag;
         listener.onDragEnd = OnEndDrag;
@@ -59,9 +63,6 @@ public class UIMain : MonoBehaviour
     void OnDrag(PointerEventData data)
     {
         Debug.Log("OnDrag --- ");
-        var cam = data.pressEventCamera;
-        Vector2 pos;
-        //JoystickDrag(pos);
     }
 
     void OnEndDrag(PointerEventData eventData)
