@@ -3166,6 +3166,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4079825145692014533, guid: 994f70dcf1414a54e9f0345881f0b7ec,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5945319350809912445}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 994f70dcf1414a54e9f0345881f0b7ec, type: 3}
 --- !u!1001 &5945319350809912444
@@ -3247,5 +3252,21 @@ PrefabInstance:
       propertyPath: m_rigdbody
       value: 
       objectReference: {fileID: 834897030}
+    - target: {fileID: 834897029, guid: 5e8307a492095cb41a16de03f91ebb7c, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e8307a492095cb41a16de03f91ebb7c, type: 3}
+--- !u!114 &5945319350809912445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 834897029, guid: 5e8307a492095cb41a16de03f91ebb7c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5945319350809912444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8bb367f751a2b54db9d60bbf2dce2d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

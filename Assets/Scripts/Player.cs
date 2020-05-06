@@ -44,9 +44,8 @@ public class Player : MonoBehaviour
         {
             var dir = (new Vector3(curDir.x, 0, curDir.y));
             transform.Translate(dir.normalized * Time.deltaTime * moveSpeed, Space.World);
-            dir.y += 10;
+            //dir.y += 10;
             Quaternion qua = Quaternion.LookRotation(dir.normalized);
-            Debug.Log("qua = " + qua + "  rotation = " + this.transform.rotation);
             this.transform.rotation = Quaternion.Lerp(this.transform.rotation, qua, Time.deltaTime * smoothing);
 
         }
