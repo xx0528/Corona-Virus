@@ -18,6 +18,10 @@ public class Player : MonoBehaviour
     {
     }
 
+    public void Init()
+    {
+
+    }
 
     public void SetDir(Vector2 dir)
     {
@@ -44,10 +48,32 @@ public class Player : MonoBehaviour
         {
             var dir = (new Vector3(curDir.x, 0, curDir.y));
             transform.Translate(dir.normalized * Time.deltaTime * moveSpeed, Space.World);
-            //dir.y += 10;
+            //dir.y = -5;
             Quaternion qua = Quaternion.LookRotation(dir.normalized);
             this.transform.rotation = Quaternion.Lerp(this.transform.rotation, qua, Time.deltaTime * smoothing);
-
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("collision enter name + " + collision.gameObject.name);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        //Debug.Log("collision Stay name + " + collision.gameObject.name);
+        Debug.Log(this.transform.localEulerAngles.x + " " + this.transform.localEulerAngles.y + " " + this.transform.localEulerAngles.z);
+        this.transform.localEulerAngles = new Vector3(this.transform.localEulerAngles.x, this.transform.localEulerAngles.y, this.transform.localEulerAngles.z);
+        //this.transform.rotation = 
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        Debug.Log("collision Exit name + " + collision.gameObject.name);
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        Debug.Log("OnTriggerEnter enter name + " + collider.gameObject.name);
     }
 }
